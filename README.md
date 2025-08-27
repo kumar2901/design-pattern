@@ -1,12 +1,19 @@
-Exploring design patterns , some leetCode problems asked during interviews and low level designs
+# Design Patterns, LeetCode Problems, and Low-Level Designs
 
-**Observer design pattern **
- 1. PubSub
- 2. Mini Kafka
+This repository explores design patterns, includes some LeetCode problems commonly asked during interviews, and covers low-level system designs.
 
-** Strategy design pattern **
- 1. Sorting
- 2. Payment
+---
 
+## Design Patterns
 
+### Observer Design Pattern
+- **PubSub Implementation**
+- **Mini Kafka**
 
+### Strategy Design Pattern
+- **Sorting Algorithms**
+- **Payment Processing**
+
+---
+
+*More patterns and problems will be added soon!*
