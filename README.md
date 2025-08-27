@@ -7,7 +7,7 @@ This repository explores design patterns, includes some LeetCode problems common
 ## Design Patterns
 
 ### Observer Design Pattern
-- **PubSub Implementation**
+- **PubSub**
 - **Mini Kafka**
 
 ### Strategy Design Pattern
