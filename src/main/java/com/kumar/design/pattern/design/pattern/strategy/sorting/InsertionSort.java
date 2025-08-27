@@ -1,4 +1,4 @@
-package com.uber.mvp.demo_uber.design.pattern.strategy;
+package com.kumar.design.pattern.design.pattern.strategy.sorting;
 
 import java.util.List;
 

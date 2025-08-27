@@ -8,8 +8,8 @@
 		<version>3.5.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.uber.mvp</groupId>
-	<artifactId>demo-uber</artifactId>
+	<groupId>com.kumar</groupId>
+	<artifactId>design-pattern</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>demo-uber</name>
 	<description>Demo project for Spring Boot</description>

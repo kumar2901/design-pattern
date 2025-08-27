@@ -1,4 +1,4 @@
-package com.uber.mvp.demo_uber;
+package com.kumar.design.pattern;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

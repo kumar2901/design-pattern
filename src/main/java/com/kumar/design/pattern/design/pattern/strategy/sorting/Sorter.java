@@ -1,4 +1,4 @@
-package com.uber.mvp.demo_uber.design.pattern.strategy;
+package com.kumar.design.pattern.design.pattern.strategy.sorting;
 
 
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.List;
 public class Sorter {
     private  SortingStrategy sortingStrategy;
 
-    Sorter(SortingStrategy sortingStrategy){
+    public Sorter(SortingStrategy sortingStrategy){
         this.sortingStrategy=sortingStrategy;
     }
 

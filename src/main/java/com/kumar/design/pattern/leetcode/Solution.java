@@ -1,4 +1,4 @@
-package com.uber.mvp.demo_uber.interview;
+package com.kumar.design.pattern.leetcode;
 
 import java.util.*;
 

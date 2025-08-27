@@ -1,4 +1,4 @@
-package com.uber.mvp.demo_uber;
+package com.kumar.design.pattern;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
