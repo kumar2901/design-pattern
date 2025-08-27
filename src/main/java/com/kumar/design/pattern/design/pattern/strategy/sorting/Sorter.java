@@ -5,16 +5,17 @@ import java.util.List;
 
 
 public class Sorter {
-    private  SortingStrategy sortingStrategy;
+    private SortingStrategy sortingStrategy;
 
-    public Sorter(SortingStrategy sortingStrategy){
-        this.sortingStrategy=sortingStrategy;
+    public Sorter(SortingStrategy sortingStrategy) {
+        this.sortingStrategy = sortingStrategy;
     }
 
-    public void setSortingStrategy(SortingStrategy sortingStrategy){
-        this.sortingStrategy=sortingStrategy;
+    public void setSortingStrategy(SortingStrategy sortingStrategy) {
+        this.sortingStrategy = sortingStrategy;
     }
-    public void sortNumber(List<Integer> numbers){
+
+    public void sortNumber(List<Integer> numbers) {
         sortingStrategy.sort(numbers);
     }
 

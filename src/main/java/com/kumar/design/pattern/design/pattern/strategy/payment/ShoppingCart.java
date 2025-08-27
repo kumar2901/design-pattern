@@ -8,8 +8,8 @@ public class ShoppingCart {
     }
 
 
-    public  void setPaymentStrategy(PaymentStrategy paymentStrategy){
-        this.paymentStrategy=paymentStrategy;
+    public void setPaymentStrategy(PaymentStrategy paymentStrategy) {
+        this.paymentStrategy = paymentStrategy;
     }
 
     public void checkout(int amount) {

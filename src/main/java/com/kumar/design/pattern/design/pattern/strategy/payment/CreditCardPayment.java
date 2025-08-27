@@ -1,7 +1,7 @@
 package com.kumar.design.pattern.design.pattern.strategy.payment;
 
-public class CreditCardPayment implements PaymentStrategy{
-    private String cardNumber;
+public class CreditCardPayment implements PaymentStrategy {
+    private final String cardNumber;
 
     public CreditCardPayment(String cardNumber) {
         this.cardNumber = cardNumber;
@@ -9,6 +9,6 @@ public class CreditCardPayment implements PaymentStrategy{
 
     @Override
     public void pay(int amount) {
-        System.out.println("Paid with credit card: " + amount+" with card number: "+cardNumber);
+        System.out.println("Paid with credit card: " + amount + " with card number: " + cardNumber);
     }
 }
