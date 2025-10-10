@@ -143,7 +143,7 @@ public class Solution {
 
 
     // ---- Demo ----
-    public static void main(String[] args) {
+      void main(String[] args) {
         System.out.println(minDeliveryTime(3, Arrays.asList(1, 1, 1, 3, 1)));
         //System.out.println(minDeliveryTime(4,Arrays.asList(1,2,3,4)));
         //System.out.println(minDeliveryTime(4,Arrays.asList(1,1,2,3,3,3,4,4)));
