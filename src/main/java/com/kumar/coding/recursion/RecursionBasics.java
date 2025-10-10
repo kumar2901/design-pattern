@@ -12,7 +12,7 @@ public class RecursionBasics {
     }
 
     public int sumOfDigits(int n) {
-        if (n == 0 || n == 1) {
+        if (n == 0 || n % 10 == n) {
             return n;
         }
         return n % 10 + sumOfDigits(n / 10);
