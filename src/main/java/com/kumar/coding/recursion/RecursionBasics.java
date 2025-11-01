@@ -1,5 +1,10 @@
 package com.kumar.coding.recursion;
 
+import org.springframework.core.StandardReflectionParameterNameDiscoverer;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class RecursionBasics {
 
     public int factorial(int n) {
@@ -34,17 +39,140 @@ public class RecursionBasics {
         if (str.charAt(l) != str.charAt(r)) {
             return false;
         }
-
         return isPalindrome(str, l + 1, r - 1);
-
 
     }
 
+    private int countZero(int n, int count) {
+        if (n == 0) {
+            return count;
+        }
+        int r = n % 10;
+        if (r == 0) {
+            count++;
+        }
+        return countZero(n / 10, count);
+    }
+
+    private boolean isSorted(int[] arr, int index) {
+        if (index == arr.length - 1) {
+            return true;
+        }
+        if (arr[index] > arr[index + 1]) {
+            return false;
+        }
+        return isSorted(arr, index + 1);
+    }
+
+    //handle duplicates as well
+    private int rotatedBinarySearch(int[] arr, int target, int left, int right) {
+        if (left > right) {
+            return -1;
+        }
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == target) {
+            return mid;
+        }
+        if (arr[left] < arr[mid]) {
+            if (target >= arr[left] && target <= arr[mid]) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        } else if (arr[left] > arr[mid]) {
+            if (target >= arr[mid] && target <= arr[right]) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        } else { //difficult part handling duplicates
+            left++;
+
+        }
+        return rotatedBinarySearch(arr, target, left, right);
+    }
+
+    /**
+     * 23
+     * {a,b,c}x{d,e,f}
+     *
+     * @param digits
+     * @return
+     */
+
+    public List<String> letterCombinations(String digits) {
+        List<String> result = new ArrayList<>();
+        if (digits == null || digits.isEmpty()) {
+            return result;
+        }
+        String[] mapping = getDigitMapping();
+        backtrack(result, digits, new StringBuilder(), 0, mapping);
+        return result;
+    }
+
+    private void backtrack(List<String> result, String digits, StringBuilder sb, int i, String[] mapping) {
+        if (i == digits.length()) {
+            result.add(sb.toString());
+            return;
+        }
+
+        int d = digits.charAt(i) - '0';
+        if (d < 2 || d >= mapping.length) { //skip non required characters
+            backtrack(result, digits, sb, i + 1, mapping);
+            return;
+        }
+
+        String letters = mapping[d];
+
+
+        for (int k = 0; k < letters.length(); k++) {
+            sb.append(letters.charAt(k));
+            backtrack(result, digits, sb, i + 1, mapping);
+            sb.deleteCharAt(sb.length() - 1);
+        }
+    }
+
+    private static String[] getDigitMapping() {
+        return new String[]{
+                "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"
+        };
+    }
+
+    public static int numRollsToTarget(int n, int k, int target) {
+        if (target < 1 || n * k < target) {
+            return 0;
+        }
+        return countWays(n, k, target);
+    }
+
+    private static int countWays(int n, int k, int target) {
+
+        if (target == 0) {
+            return 1;
+        }
+
+        if (n == 0 || target < 0) {
+            return 0;
+        }
+        int ways = 0;
+        for (int i = 1; i <= k && i <= target; i++) {
+            ways += countWays(n - 1, k, target - i);
+            if (ways >= 1000000007) {
+                ways = ways % 1000000007;
+            }
+        }
+
+        return ways;
+    }
+
+
     void main(String[] args) {
-        System.out.println(factorial(5));
-        System.out.println(sumOfDigits(1234));
-        System.out.println(reverseNumber(1024, 0));
-        System.out.println(isPalindrome("madam", 0, 4));
-        System.out.println(isPalindrome("hello", 0, 4));
+        System.out.println(letterCombinations("234"));
+        System.out.println(letterCombinations("23014"));
+        System.out.println(numRollsToTarget(1, 6, 4));
+        System.out.println(numRollsToTarget(2, 6, 10));
+        System.out.println(numRollsToTarget(3, 6, 14));
+        System.out.println(numRollsToTarget(6, 6, 20));
+        System.out.println(numRollsToTarget(30, 6, 14972));
     }
 }
